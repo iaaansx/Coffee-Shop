@@ -290,3 +290,50 @@ button:hover{
 }
 
 /* Profile Dropdown */
+.profile {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.profile-btn:hover {
+  color: var(--bluer-bg);
+}
+
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+  flex-direction: column;
+}
+
+.profile-dropdown a {
+  color: var(--text-color);
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease;
+}
+
+.profile-dropdown a:hover {
+  background: var(--accent);
+}
+
+.profile.active .profile-dropdown {
+  display: flex;
+}

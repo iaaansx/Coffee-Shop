@@ -78,4 +78,26 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Profile Dropdown Handling
+// Logout
+document.querySelector('.logout-btn').addEventListener('click', () => {
+  localStorage.removeItem('currentUser');
+  sessionStorage.removeItem('currentUser');
+});
+
+
+// Dropdown Toggle
+const profile = document.querySelector('.profile');
+const profileBtn = document.querySelector('.profile-btn');
+
+profileBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  profile.classList.toggle('active');
+});
+
+
+// Close dropdown when clicking outside
+window.addEventListener('click', () => {
+  if (profile.classList.contains('active')) {
+    profile.classList.remove('active');
+  }
+});
