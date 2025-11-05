@@ -78,4 +78,4 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Profile Dropdown Handling
+// Sign Up toggle link
