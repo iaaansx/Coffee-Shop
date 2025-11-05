@@ -94,10 +94,7 @@ profileBtn.addEventListener('click', (e) => {
   profile.classList.toggle('active');
 });
 
-
 // Close dropdown when clicking outside
 window.addEventListener('click', () => {
-  if (profile.classList.contains('active')) {
-    profile.classList.remove('active');
-  }
+  profile.classList.remove('active');
 });
