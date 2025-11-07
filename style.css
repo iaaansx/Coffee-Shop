@@ -8,11 +8,14 @@
 :root{
     --dark-bg: #0a0a0a;
     --darker-bg: #050505;
-    --accent: #5C4033;
     --accent-glow: rgba(158, 109, 86, 0.6);
     --bluer-bg: #0cc8e9;
-    --text-color: #E0E0E0;
     --red-bg: #e00b0b;
+    --accent: #6F4E37; 
+    --text-color: #f9f4ef;
+    --highlight: #c9a47a;
+    --header: #ffdf91;
+
 }
 
 body{
@@ -61,7 +64,7 @@ body{
 }
 
 .nav-links a:hover{
-    color: #ffdf91;
+    color: var(--header);
 }
 
 .nav-links a::after{
@@ -166,7 +169,7 @@ body{
 .hero-content h1{
     font-size: 3rem;
     margin-bottom: 20px;
-    color: var(--darker-bg);
+    color: var(--text-color);
     text-shadow: 0 0 10px var(--accent-glow);
 }
 
@@ -338,8 +341,7 @@ button:hover{
       position: relative;
       display: inline-block;
     }
-
-    .profile-btn {
+.profile-btn {
       background-color: #007bff;
       color: white;
       border: none;
@@ -349,12 +351,10 @@ button:hover{
       font-size: 18px;
       transition: background-color 0.3s;
     }
-
-    .profile-btn:hover {
+.profile-btn:hover {
       background-color: #0056b3;
     }
-
-    .profile-dropdown {
+.profile-dropdown {
       display: none;
       position: absolute;
       top: 50px;
@@ -367,34 +367,134 @@ button:hover{
       z-index: 10;
       animation: fadeIn 0.25s ease;
     }
-
-    .profile-dropdown a {
+.profile-dropdown a {
       display: block;
       padding: 12px 16px;
       text-decoration: none;
       color: #333;
       transition: background-color 0.3s, color 0.3s;
     }
-
-    .profile-dropdown a:hover {
+.profile-dropdown a:hover {
       background-color: #f1f1f1;
       color: #007bff;
     }
-
-    .logout-btn {
+.logout-btn {
       color: #e74c3c;
       font-weight: 600;
     }
-
-    .logout-btn:hover {
+.logout-btn:hover {
       background-color: #ffeaea;
     }
-
-    .profile.show .profile-dropdown {
+.profile.show .profile-dropdown {
       display: block;
     }
-
-    @keyframes fadeIn {
+@keyframes fadeIn {
       from { opacity: 0; transform: translateY(-5px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    
+/* MENU SECTION */
+.menu {
+  position: relative;
+  padding: 100px 20px;
+  background-color: #1a1a1a;
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.menu h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+/* Scrollable container */
+.menu-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  padding: 20px;
+}
+
+.menu-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Menu Cards */
+.menu-card {
+  flex: 0 0 auto;
+  width: 260px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.menu-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.menu-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.menu-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.menu-info p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.price {
+  display: block;
+  color: var(--bluer-bg);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Scroll Buttons */
+.scroll-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  padding: 0 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.scroll-btn {
+  background-color: rgba(92,64,51,0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: all;
+}
+
+.scroll-btn:hover {
+  background-color: var(--bluer-bg);
+  transform: scale(1.1);
+}
