@@ -71,12 +71,12 @@ signinForm.addEventListener('submit', (e) => {
     }
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser')) || JSON.parse(sessionStorage.getItem('currentUser'));
-    if(currentUser) {
-        window.location.href = 'dashboard.html';
-    }
-});
+// window.addEventListener('DOMContentLoaded', () => {
+//     const currentUser = JSON.parse(localStorage.getItem('currentUser')) || JSON.parse(sessionStorage.getItem('currentUser'));
+//     if(currentUser) {
+//         window.location.href = 'dashboard.html';
+//     }
+// });
 
 // Logout
 document.querySelector('.logout-btn').addEventListener('click', () => {
@@ -86,15 +86,13 @@ document.querySelector('.logout-btn').addEventListener('click', () => {
 
 
 // Dropdown Toggle
-const profile = document.querySelector('.profile');
-const profileBtn = document.querySelector('.profile-btn');
+function toggleProfileMenu() {
+      document.getElementById("profileMenu").classList.toggle("show");
+    }
 
-profileBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  profile.classList.toggle('active');
-});
-
-// Close dropdown when clicking outside
-window.addEventListener('click', () => {
-  profile.classList.remove('active');
-});
+ // Close when clicking outside
+window.addEventListener("click", function(e) {
+     if (!e.target.closest(".profile")) {
+        document.getElementById("profileMenu").classList.remove("show");
+      }
+    });

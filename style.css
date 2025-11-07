@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 :root{
@@ -35,6 +35,7 @@ body{
     z-index: 1000;
     border-bottom: 1px solid var(--accent);
     font-size: 1.4rem;
+    box-shadow: 0.2px 10px rgba(0,0,0,0.3);
 }
 
 .logo {
@@ -57,6 +58,10 @@ body{
     font-weight: 500;
     position: relative;
     transition: all 0.3s ease;
+}
+
+.nav-links a:hover{
+    color: #ffdf91;
 }
 
 .nav-links a::after{
@@ -129,13 +134,42 @@ body{
 
 /*HOME SECTION*/
 .home {
+    background-image: url(coffee-hs.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 20px;
 }
+
+.home::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.hero-content{
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--darker-bg);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
 .order-btn{
     margin-top: 20px;
     padding: 10px 20px;
@@ -147,6 +181,16 @@ body{
     font-size: 1.2rem;
     transition: background-color 0.3s ease;
 }
+.hero-content h1, .hero-content p, .order-btn {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 /*LOGIN FORM*/
 .bg-login{
@@ -291,49 +335,66 @@ button:hover{
 
 /* Profile Dropdown */
 .profile {
-  position: relative;
-  display: inline-block;
-}
+      position: relative;
+      display: inline-block;
+    }
 
-.profile-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: var(--text-color);
-  transition: color 0.3s ease;
-}
+    .profile-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
 
-.profile-btn:hover {
-  color: var(--bluer-bg);
-}
+    .profile-btn:hover {
+      background-color: #0056b3;
+    }
 
-.profile-dropdown {
-  display: none;
-  position: absolute;
-  top: 45px;
-  right: 0;
-  background: rgba(0, 0, 0, 0.9);
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  min-width: 160px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 10;
-  flex-direction: column;
-}
+    .profile-dropdown {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      min-width: 160px;
+      overflow: hidden;
+      z-index: 10;
+      animation: fadeIn 0.25s ease;
+    }
 
-.profile-dropdown a {
-  color: var(--text-color);
-  padding: 10px 15px;
-  text-decoration: none;
-  display: block;
-  transition: background 0.3s ease;
-}
+    .profile-dropdown a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-.profile-dropdown a:hover {
-  background: var(--accent);
-}
+    .profile-dropdown a:hover {
+      background-color: #f1f1f1;
+      color: #007bff;
+    }
 
-.profile.active .profile-dropdown {
-  display: flex;
-}
+    .logout-btn {
+      color: #e74c3c;
+      font-weight: 600;
+    }
+
+    .logout-btn:hover {
+      background-color: #ffeaea;
+    }
+
+    .profile.show .profile-dropdown {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
