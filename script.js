@@ -98,20 +98,16 @@ window.addEventListener("click", function(e) {
     });
 
 // Horizontal scroll functionality
-const menuScroll = document.querySelector('.menu-scroll');
-const leftBtn = document.querySelector('.left-btn');
-const rightBtn = document.querySelector('.right-btn');
+  const scrollContainer = document.querySelector('.menu-scroll');
+  const leftBtn = document.querySelector('.left-btn');
+  const rightBtn = document.querySelector('.right-btn');
 
-rightBtn.addEventListener('click', () => {
-  menuScroll.scrollBy({
-    left: 300,
-    behavior: 'smooth'
-  });
-});
+  const scrollAmount = 300;
 
-leftBtn.addEventListener('click', () => {
-  menuScroll.scrollBy({
-    left: -300,
-    behavior: 'smooth'
+  rightBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
-});
+
+  leftBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
