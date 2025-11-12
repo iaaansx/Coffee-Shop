@@ -22,7 +22,8 @@ body{
     background-color: var(--darker-bg);
     color: var(--text-color);
     line-height: 1.6;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /*NAVBAR HEADER*/
@@ -184,6 +185,11 @@ body{
     font-size: 1.2rem;
     transition: background-color 0.3s ease;
 }
+.order-btn a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 .hero-content h1, .hero-content p, .order-btn {
   opacity: 0;
   animation: fadeUp 1s ease forwards;
@@ -396,8 +402,9 @@ button:hover{
 /* MENU SECTION */
 .menu {
   position: relative;
+  min-height: 100vh;
   padding: 100px 20px;
-  background-color: #1a1a1a;
+  background-image: url('coffee-menu.png');
   color: var(--text-color);
   text-align: center;
 }
@@ -484,3 +491,83 @@ button:hover{
   transform: scale(1.1);
 }
 
+
+/*ABOUT US SECTION*/
+.about {
+    padding: 100px 20px;
+    background-color: var(--darker-bg);
+    color:var(--text-color);
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.about h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+.about p{
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.about-content{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-top: 40px;
+}
+.about-img img{
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+/*CONTACT SECTION*/
+.contact {
+    padding: 100px 20px;
+    background-color: var(--darker-bg);
+    color: var(--text-color);
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.contact p{
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.contact-form{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--red-bg);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+}
