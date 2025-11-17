@@ -403,7 +403,7 @@ button:hover{
 .menu {
   position: relative;
   min-height: 100vh;
-  padding: 100px 20px;
+  padding: 180px 75px 20px;
   background-image: url('coffee-menu.png');
   color: var(--text-color);
   text-align: center;
@@ -478,8 +478,8 @@ button:hover{
   color: white;
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -494,7 +494,7 @@ button:hover{
 
 /*ABOUT US SECTION*/
 .about {
-    padding: 100px 20px;
+    padding: 135px 20px;
     background-color: var(--darker-bg);
     color:var(--text-color);
     text-align: center;
@@ -529,7 +529,8 @@ button:hover{
 
 /*CONTACT SECTION*/
 .contact {
-    padding: 100px 20px;
+    padding: 10px 20px;
+    height: 75vh;
     background-color: var(--darker-bg);
     color: var(--text-color);
     text-align: center;
@@ -566,7 +567,7 @@ button:hover{
     padding: 10px;
     border: 1px solid var(--red-bg);
     border-radius: 5px;
-    background: transparent;
+    background: whitesmoke;
     color: var(--text-color);
     font-size: 1rem;
     outline: none;
